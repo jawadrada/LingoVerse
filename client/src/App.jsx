@@ -1,11 +1,11 @@
 import React from 'react'
 
+//Add routes here
+
 function App() {
   return (
     <>
-      <div className="container mx-auto text-5xl text-blue-500 text-center p-5">
-        <h1>Lingo Verse</h1>
-      </div>
+      <div>Lingo Verse</div>
     </>
   )
 }
