@@ -5,8 +5,7 @@
 - [Tech Stack](#tech-stack)
 - [Features](#features)
 - [Design](#design)
-- [Screenshots](#screenshots)
-- [Development Setup](#development-setup)
+- [GIF](#screenshots)
 
 ## Project Description
 
@@ -21,7 +20,6 @@
 ### Wire Frames
 
 
-## Screenshots
+## GIFS
 
 
-## Development Setup
