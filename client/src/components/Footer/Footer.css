@@ -1,12 +1,35 @@
 footer {
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
     width: 100%;
-    /* background: rgb(33, 33, 33); */
+    color: black;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .footer-text {
-    /* color: white; */
-    color: black;
+    margin: 0;
+    padding: 10px 0;
     font-size: 1rem;
+}
+
+.footer-text strong {
+    color: #4378FF;
+}
+
+.footer-icons {
+    margin-top: 8px;
+}
+
+.footer-icons a {
+    margin: 0 12px;
+    color: black;
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.footer-icons a:hover {
+    color: #4378FF;
+    transform: scale(1.2);
 }
