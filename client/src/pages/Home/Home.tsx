@@ -7,7 +7,6 @@ function Home() {
       <div className="home-flex-container">
         <h1>Lingo Verse</h1>
         <p>Lingo Verse is a translation and language learning app dedicated to various Arabic dialects. The beta app will offer translation services between Lebanese Arabic and English.</p>
-        {/* <h3>Arabic Dialect Translation App</h3> */}
 
         <div className="home-row-container">
           <img className="home-image-container" src="/GIF.png" alt="GIF Showing translations" />
@@ -15,7 +14,7 @@ function Home() {
         </div>
         
         <div className="home-btn-container">
-          <Button route="/translations">Get Started</Button>
+          <Button route="/translation">Get Started</Button>
         </div>
       </div>
     </div>

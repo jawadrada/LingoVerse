@@ -20,22 +20,17 @@
 
 .home-flex-container h1 {
     font-size: 2.5rem;
-    color: #4378FF;
+    color: white;
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(67, 120, 255, 0.4);
 }
-
-/* .home-flex-container h3 {
-    font-size: 1.5rem;
-    color: #373737;
-    font-weight: 600;
-} */
 
 .home-flex-container p {
     max-width: 60%;
     color: #fffdfd; 
     line-height: 1.6; 
-    text-align: center; 
+    text-align: center;
+    font-size: 1.1rem;
 }
 
 .home-row-container {
