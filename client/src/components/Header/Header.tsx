@@ -1,7 +1,20 @@
 import "./Header.css";
 import Button from "../Button/Button.tsx";
+import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 function Header() {
+  const { t, i18n } = useTranslation();
+  const [language, setLanguage] = useState('en');
+
+  const handleChangeLanguage = () => {
+    const newLanguage = language === "en" ? "ar" : "en";
+    i18n.changeLanguage(newLanguage);
+    setLanguage(newLanguage);
+  };
+  
+  let displayLanguage = language === "en" ? "عربي" : "English"
+
   return (
     <header>
       <div className="logo-container">
@@ -10,8 +23,8 @@ function Header() {
       </div>
 
       <nav className="nav-buttons">
-        <Button route="translation" mode="text">Translations</Button>
-        <Button mode="text">Arabic</Button>
+        <Button route="translation" mode="text">{t("header_button")}</Button>
+        <Button onClick={handleChangeLanguage} mode="text">{displayLanguage}</Button>
       </nav>
     </header>
   );
