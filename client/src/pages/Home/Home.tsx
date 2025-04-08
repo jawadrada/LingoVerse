@@ -3,7 +3,7 @@ import Button from "../../components/Button/Button.tsx";
 import { useTranslation } from 'react-i18next';
 
 function Home() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className="home-container">
