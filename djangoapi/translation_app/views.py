@@ -1,6 +1,8 @@
 import os
 from openai import OpenAI
 from django.http import JsonResponse
+from .models import CommonTranslation
+from .serializers import CommonTranslationSerializer
 from django.views.decorators.csrf import csrf_exempt
 import json
 
@@ -47,6 +49,48 @@ def translate_text(request):
     else:
         return JsonResponse({"error": "Method not allowed"}, status=405)
 
+@csrf_exempt
+def list_common_translations(request):
+    if request.method == "GET":
+        try:
+            translations = CommonTranslation.objects.all().order_by("-count")
+            serializer = CommonTranslationSerializer(translations, many=True)
+            return JsonResponse({"response": serializer.data}, status=200)
+        
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=500)
+    else:
+        return JsonResponse({"error": "Method not allowed"}, status=405)
+
+
+@csrf_exempt
+def update_common_translations(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            text = data.get('text', '').strip().lower()
+            translated_text = data.get('translated_text', '').strip()
+
+            if not text or not translated_text:
+                return JsonResponse({'error': 'Both text and translated_text are required'}, status=400)
+
+            translation, created = CommonTranslation.objects.get_or_create(
+                text=text,
+                defaults={'translated_text': translated_text}
+            )
+            
+            if not created:
+                translation.count += 1
+                translation.save()
+
+            serializer = CommonTranslationSerializer(translation)
+            return JsonResponse(serializer.data, status=200)
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=500)
+
+    else:
+        return JsonResponse({"error": "Method not allowed"}, status=405)
+
 
 #JsonResponse class in Django is used to send JSON-formatted responses back to the client
     # arguments
@@ -59,3 +103,4 @@ def translate_text(request):
 #     "input_language" : "Ex: English",
 #     "target_language" : "Ex: Lebanese arabic"
 # }
+#

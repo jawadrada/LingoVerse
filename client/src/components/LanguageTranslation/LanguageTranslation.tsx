@@ -9,6 +9,7 @@ function LanguageTranslation() {
   
   const [inputText, setInputText] = useState("");
   const [outputText, setOutputText] = useState("");
+  const [lastSavedText, setLastSavedText] = useState("");
 
   function swapLanguages() {
     setFromLanguage(toLanguage);
@@ -65,6 +66,39 @@ function LanguageTranslation() {
 
   }, [inputText, fromLanguage, toLanguage]);
 
+useEffect(() => {
+  if (
+    fromLanguage.toLowerCase() === "english" &&
+    inputText.trim() &&
+    outputText.trim() &&
+    inputText.trim().toLowerCase() !== lastSavedText
+  ) {
+    async function saveTranslation() {
+      try {
+        let url = "http://127.0.0.1:8000/api/translations/update/";
+
+        await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(
+          {
+            text: inputText.trim().toLowerCase(), 
+            translated_text: outputText.trim()
+          }
+        ),
+        });
+
+        setLastSavedText(inputText.trim().toLowerCase());
+      } catch(error){
+        console.error("Failed to save last translation", (error as Error).message)
+      }
+    }
+
+    saveTranslation();
+  }
+}, [outputText]);
 
   return (
     <div className="LanguageTranslation-container">

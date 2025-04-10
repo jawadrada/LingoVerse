@@ -6,11 +6,16 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
     route?: string;
     mode?: "default" | "outline" | "text";
+    extraCssClass?: string,
 }
 
-const Button: React.FC<ButtonProps> = ({ children, route, onClick, mode = "default", ...props }) => {
+const Button: React.FC<ButtonProps> = ({ children, route, onClick, extraCssClass, mode = "default", ...props }) => {
     const navigate = useNavigate();
-    const cssClasses = `btn ${mode}-btn ${mode}-btn:hover`;
+    let cssClasses = `btn ${mode}-btn ${mode}-btn:hover `;
+
+    if(extraCssClass !== "") {
+        cssClasses += extraCssClass
+    }
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         if (onClick) {
