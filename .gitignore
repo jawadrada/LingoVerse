@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .envenv_site/
+
+env_site/
+djangoapi/.env
