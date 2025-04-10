@@ -23,8 +23,8 @@ function Header() {
       </div>
 
       <nav className="nav-buttons">
-        <Button route="translation" mode="text">{t("header_button")}</Button>
-        <Button onClick={handleChangeLanguage} mode="text">{displayLanguage}</Button>
+        <Button route="translation" mode="text" extraCssClass="white">{t("header_button")}</Button>
+        <Button onClick={handleChangeLanguage} mode="text" extraCssClass="white">{displayLanguage}</Button>
       </nav>
     </header>
   );
