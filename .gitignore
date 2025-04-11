@@ -27,3 +27,6 @@ dist-ssr
 
 env_site/
 djangoapi/.env
+djangoapi/env/
+__pycache__/
+*.pyc
