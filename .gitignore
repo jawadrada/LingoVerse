@@ -23,10 +23,14 @@ dist-ssr
 *.sln
 *.sw?
 
-.envenv_site/
-
-env_site/
-djangoapi/.env
-djangoapi/env/
+# Python
 __pycache__/
+*.py[cod]
 *.pyc
+
+# Virtual environments
+env_site/
+djangoapi/env/
+
+# Env files
+djangoapi/.env
