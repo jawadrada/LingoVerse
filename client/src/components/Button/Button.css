@@ -22,10 +22,7 @@
     background: transparent;
     border: none;
     color: #4378FF;
-}
-
-.text-btn:hover {
-    text-decoration: underline;
+    font-family: 'Inter', sans-serif;
 }
 
 .outline-btn {
@@ -42,6 +39,21 @@
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
 }
 
-.white {
-    color: white;
+.header-button {
+    --a-text-color: rgb(#4d6bfe);
+    --a-box-shadow-color-focus: rgb(#4d6bfe);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.25rem;
+}
+
+.underline {
+    border-bottom: 1px solid #4d6bfe;
+}
+
+.header-button2 {
+    --tw-text-opacity: 1;
+    color: rgb(148 163 184/ 1);
+    font-size: 16px;
+    line-height: 1.25rem;
 }
