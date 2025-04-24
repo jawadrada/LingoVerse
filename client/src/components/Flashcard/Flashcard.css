@@ -1,0 +1,14 @@
+.flash-card {
+    margin-bottom: 50px;
+}
+
+.card {
+    padding: 120px 80px;
+    width: 48%;
+    margin: 30px auto;
+    border: 2px solid #ccc;
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+    color: rgb(71 85 105/ 1);
+}
