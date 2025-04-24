@@ -60,7 +60,7 @@ function CommonTranslations() {
                     borderRadius: "1px",
                   }}
                 />{" "}
-                (Source) English
+                {t('common_translations_source')}
               </th>
               <th>
                 <LB
@@ -71,7 +71,7 @@ function CommonTranslations() {
                     borderRadius: "1px",
                   }}
                 />{" "}
-                (Target) Lebanese Arabic
+                {t('common_translations_target')}
               </th>
             </tr>
           </thead>
