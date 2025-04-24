@@ -1,0 +1,10 @@
+.flashcard-container {
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+}
+
+.flashcard-container h2 {
+    color: #4378FF;
+    text-align: center;
+}
