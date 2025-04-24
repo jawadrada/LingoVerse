@@ -34,14 +34,14 @@ function Header() {
           mode="text"
           extraCssClass="header-button underline"
         >
-          {t("header_button")}
+          {t("header_translate_button")}
         </Button>
         <Button
           route="learning"
           mode="text"
           extraCssClass="header-button underline"
         >
-          Learning
+          {t("header_learning_button")}
         </Button>
         <Button
           onClick={handleChangeLanguage}
