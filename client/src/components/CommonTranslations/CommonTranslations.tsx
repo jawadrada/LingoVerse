@@ -40,7 +40,7 @@ function CommonTranslations() {
     }
 
     fectchCommonTranslations();
-  }, []);
+  }, [error]);
 
   return isFetching ? (
     <p>Fetching translations please wait...</p>
