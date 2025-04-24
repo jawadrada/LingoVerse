@@ -43,7 +43,7 @@ function Translation() {
     }
 
     fetchCommonTranslations();
-  }, []);
+  }, [error]);
 
   function handleNextCard() {
     setIndex((index + 1) % commonTranslations.length);
