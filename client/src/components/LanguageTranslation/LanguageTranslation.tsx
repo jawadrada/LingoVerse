@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import Button from "../Button/Button.tsx";
 import { GoArrowSwitch } from "react-icons/go";
+import { useTranslation } from "react-i18next";
 import "./LanguageTranslation.css";
 
 function LanguageTranslation() {
-  const [fromLanguage, setFromLanguage] = useState("English");
-  const [toLanguage, setToLanguage] = useState("Arabic");
+  const { t } = useTranslation();
+  const [fromLanguage, setFromLanguage] = useState('english');
+  const [toLanguage, setToLanguage] = useState('arabic');
 
   const [inputText, setInputText] = useState("");
   const [outputText, setOutputText] = useState("");
@@ -14,12 +16,17 @@ function LanguageTranslation() {
   function swapLanguages() {
     setFromLanguage(toLanguage);
     setToLanguage(fromLanguage);
+
+    const input = inputText;
+    setInputText(outputText);
+    setOutputText(input);
   }
 
   function handleInputChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
     setInputText(e.target.value);
   }
 
+  //Translates text
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       async function translateText() {
@@ -64,6 +71,9 @@ function LanguageTranslation() {
     return cleanup;
   }, [inputText, fromLanguage, toLanguage]);
 
+
+
+  //Saves translation to database
   useEffect(() => {
     if (
       fromLanguage.toLowerCase() === "english" &&
@@ -104,25 +114,25 @@ function LanguageTranslation() {
       <div className="LanguageTranslation-title">Lingo Verse</div>
 
       <div className="LanguageTranslation-switcher">
-        <p className="color">{fromLanguage}</p>
+        <p className="color">{t(fromLanguage)}</p>
         <Button mode="text" onClick={() => swapLanguages()}>
           {" "}
           <GoArrowSwitch size={20} className="switcher" />{" "}
         </Button>
-        <p className="color">{toLanguage}</p>
+        <p className="color">{t(toLanguage)}</p>
       </div>
 
       <div className="LanguageTranslation-textarea-container">
         <textarea
           className="LanguageTranslation-textarea"
-          placeholder={`Type in ${fromLanguage}`}
+          placeholder={`${t('type_in')} ${t(fromLanguage)}`}
           onChange={handleInputChange}
           value={inputText}
         />
 
         <textarea
           className="LanguageTranslation-textarea"
-          placeholder={`${toLanguage}...`}
+          placeholder={`${t(toLanguage)}...`}
           value={outputText}
           readOnly
         />
