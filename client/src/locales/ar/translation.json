@@ -1,6 +1,13 @@
 {
-    "app_description": "لينغو فيرس تطبيق ترجمة وتعلم لغات مخصص لمختلف اللهجات العربية. سيقدم التطبيق التجريبي خدمات الترجمة بين اللهجة اللبنانية والإنجليزية.",
+    "app_description": "تُدرّس تطبيقات الترجمة ومواقع تعلم اللغات اللغة العربية الفصحى بشكل رئيسي. يُركّز هذا التطبيق على اللهجات العربية المُحدّدة.",
     "footer_text": "كل الحقوق محفوظة.",
-    "header_button": "تراجم",
-    "Commonly Traslated Title": "الكلمات والعبارات المترجمة بشكل شائع"
+    "header_translate_button": "ترجم",
+    "header_learning_button": "تعلّم",
+    "home_page_button": "البدء",
+    "Commonly Traslated Title": "الكلمات والعبارات المترجمة بشكل شائع",
+    "common_translations_source": "(المصدر) الإنجليزية",
+    "common_translations_target": "(الهدف) لبناني عربي",
+    "english": "إنجليزي",
+    "arabic": "عربي",
+    "type_in": "اكتب في"
 }

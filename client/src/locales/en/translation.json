@@ -1,6 +1,13 @@
 {
-    "app_description": "The beta will offer translation services between Lebanese Arabic and English.",
+    "app_description": "Translation apps and language learning sites mostly teach Modern Standard Arabic. This app focuses on Arabic specfic dialects.",
     "footer_text": "All rights reserved.",
-    "header_button": "Translate",
-    "Commonly Traslated Title": "Commonly Translated Words & Phrases"
+    "header_translate_button": "Translate",
+    "header_learning_button": "Learning",
+    "home_page_button": "Get Started",
+    "Commonly Traslated Title": "Commonly Translated Words & Phrases",
+    "common_translations_source": "(Source) English",
+    "common_translations_target": "(Target) Lebanese Arabic",
+    "english": "English",
+    "arabic": "Arabic",
+    "type_in": "Type in"
 }
